@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dogs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 32px 24px;
+    }
+    h1 {
+      text-align: center;
+      color: #2d3a4b;
+      margin-bottom: 12px;
+    }
+    p {
+      color: #444;
+      font-size: 1.1em;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    label {
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    input, select {
+      padding: 8px 10px;
+      border: 1px solid #bbb;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    button {
+      background: #4a90e2;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #357ab8;
+    }
+    .success {
+      color: #2e7d32;
+      background: #e8f5e9;
+      border: 1px solid #b2dfdb;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 18px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Dogs</h1>
+    <p>
+      Dogs are loyal, loving companions that bring joy to millions of people around the world. Whether you have a playful puppy or a wise old friend, every dog is special in their own way. Join our community and subscribe with your dog!
+    </p>
+    <form id="dogForm">
+      <div>
+        <label for="ownerName">Your Name</label>
+        <input type="text" id="ownerName" name="ownerName" required>
+      </div>
+      <div>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="dogName">Dog's Name</label>
+        <input type="text" id="dogName" name="dogName" required>
+      </div>
+      <div>
+        <label for="dogBreed">Dog's Breed</label>
+        <input type="text" id="dogBreed" name="dogBreed" required>
+      </div>
+      <div>
+        <label for="dogAge">Dog's Age</label>
+        <input type="number" id="dogAge" name="dogAge" min="0" max="30" required>
+      </div>
+      <button type="submit">Subscribe</button>
+    </form>
+    <div id="successMsg" class="success" style="display:none;">
+      Thank you for subscribing with your dog!
+    </div>
+  </div>
+  <script>
+    document.getElementById('dogForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // You can process the form data here, e.g., send to a server
+      // For demo, just show a success message and reset the form
+      document.getElementById('successMsg').style.display = 'block';
+      document.getElementById('dogForm').reset();
+      setTimeout(function() {
+        document.getElementById('successMsg').style.display = 'none';
+      }, 4000);
+    });
+  </script>
+</body>
+</html>
